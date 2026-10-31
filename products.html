@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrightLoop | Products</title>
+    <link rel="stylesheet" href="css/products.css">
+</head>
+
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+
+        <h2>BRIGHTLOOP</h2>
+
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="subscriptions.html">Subscriptions</a></li>
+                <li><a href="#">Payments</a></li>
+                <li><a href="#">Invoices</a></li>
+                <li><a href="customers.html">Customers</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="products-page">
+
+        <header class="page-header">
+            <h1>Product Management</h1>
+            <p>Add and manage your products, pricing and subscription plans.</p>
+        </header>
+
+
+        <!-- Add Product Form -->
+        <section class="add-product">
+
+            <h2>Add New Product</h2>
+
+            <form action="subscriptions.html" method="get">
+
+                <label for="product-name">Product Name</label>
+                <input type="text" id="product-name"
+                    name="product_name"
+                    placeholder="Enter product name" required>
+
+                <label for="product-type">Product Type</label>
+                <select id="product-type" name="product_type" required>
+                    <option value="">Select Product Type</option>
+                    <option value="software">Software</option>
+                    <option value="service">Service</option>
+                    <option value="digital">Digital Product</option>
+                    <option value="physical">Physical Product</option>
+                </select>
+
+                <label for="selling-price">Selling Price (₹)</label>
+                <input type="number" id="selling-price"
+                    name="selling_price"
+                    placeholder="Enter selling price" min="0" required>
+
+                <label for="cost-price">Cost Price (₹)</label>
+                <input type="number" id="cost-price"
+                    name="cost_price"
+                    placeholder="Enter cost price" min="0" required>
+
+                <label for="product-notes">Product Notes</label>
+                <textarea id="product-notes" name="notes"
+                    placeholder="Enter product description or notes"></textarea>
+
+
+                <!-- Product Variants -->
+                <h2>Product Variants</h2>
+
+                <label for="variant-name">Variant Name</label>
+                <input type="text" id="variant-name"
+                    name="variant_name"
+                    placeholder="Example: Standard, Premium, Pro">
+
+                <label for="variant-price">Variant Price (₹)</label>
+                <input type="number" id="variant-price"
+                    name="variant_price"
+                    placeholder="Enter variant price" min="0">
+
+
+                <!-- Add-ons -->
+                <h2>Product Add-ons</h2>
+
+                <label for="addon-name">Add-on Name</label>
+                <input type="text" id="addon-name"
+                    name="addon_name"
+                    placeholder="Example: Extra Storage, Priority Support">
+
+                <label for="addon-price">Add-on Price (₹)</label>
+                <input type="number" id="addon-price"
+                    name="addon_price"
+                    placeholder="Enter add-on price" min="0">
+
+
+                <!-- Subscription Plans -->
+                <h2>Subscription Plans</h2>
+
+                <label for="plan-name">Plan Name</label>
+                <select id="plan-name" name="plan_name">
+                    <option value="">Select Plan</option>
+                    <option value="basic">Basic</option>
+                    <option value="premium">Premium</option>
+                    <option value="enterprise">Enterprise</option>
+                </select>
+
+                <label for="billing-frequency">Billing Frequency</label>
+                <select id="billing-frequency" name="billing_frequency">
+                    <option value="">Select Billing Frequency</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="quarterly">Quarterly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
+
+                <label for="plan-price">Subscription Price (₹)</label>
+                <input type="number" id="plan-price"
+                    name="plan_price"
+                    placeholder="Enter subscription price" min="0">
+
+
+                <!-- Submit Button -->
+                <button type="submit">Save Product</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
