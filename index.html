@@ -1,1 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Brightloop | Subscription Management</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <div class="logo">BRIGHTLOOP</div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#explore">Explore</a>
+            <a href="#about">About</a>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="login-btn" onclick="openModal('login')">
+                Login
+            </button>
+
+            <button class="register-btn" onclick="openModal('register')">
+                Register
+            </button>
+        </div>
+    </nav>
+
+
+    <!-- HERO SECTION / IMAGE SLIDER -->
+
+    <section class="hero" id="home">
+
+        <!-- SLIDE 1 -->
+
+        <div class="slide active"
+            style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=90');">
+
+            <div class="slide-content">
+
+                <div class="tagline">WELCOME TO BRIGHTLOOP</div>
+
+                <h1>Every Subscription. One Powerful Platform.</h1>
+
+                <p>
+                    Manage subscriptions, automate billing,
+                    track payments and grow your business —
+                    all from one place.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button class="primary-btn"
+                        onclick="openModal('register')">
+                        Get Started
+                    </button>
+
+                    <button class="secondary-btn"
+                        onclick="document.getElementById('about').scrollIntoView()">
+                        More Information
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- SLIDE 2 -->
+
+        <div class="slide"
+            style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=90');">
+
+            <div class="slide-content">
+
+                <div class="tagline">SMARTER BUSINESS OPERATIONS</div>
+
+                <h1>Make Every Payment Count.</h1>
+
+                <p>
+                    Keep invoices organised, monitor payments
+                    and stay on top of every transaction.
+                </p>
+
+                <button class="primary-btn"
+                    onclick="openModal('register')">
+                    Get Started
+                </button>
+
+            </div>
+        </div>
+
+
+        <!-- SLIDE 3 -->
+
+        <div class="slide"
+            style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1800&q=90');">
+
+            <div class="slide-content">
+
+                <div class="tagline">YOUR BUSINESS, IN CONTROL</div>
+
+                <h1>Turn Data Into Decisions.</h1>
+
+                <p>
+                    Understand your revenue, discover billing
+                    issues and manage your business confidently.
+                </p>
+
+                <button class="primary-btn"
+                    onclick="openModal('register')">
+                    Get Started
+                </button>
+
+            </div>
+        </div>
+
+
+        <!-- SLIDER INDICATORS -->
+
+        <div class="slider-dots">
+
+            <div class="dot active" onclick="showSlide(0)"></div>
+
+            <div class="dot" onclick="showSlide(1)"></div>
+
+            <div class="dot" onclick="showSlide(2)"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPLORE FEATURES -->
+
+    <section class="section" id="explore">
+
+        <h2>Explore <span>Brightloop</span></h2>
+
+        <div class="marquee">
+
+            <div class="marquee-track">
+
+                <!-- FEATURE 1 -->
+
+                <div class="feature-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=700&q=85"
+                        alt="Subscription Management">
+
+                    <div class="card-title">
+                        Subscription Management
+                    </div>
+                </div>
+
+
+                <!-- FEATURE 2 -->
+
+                <div class="feature-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=700&q=85"
+                        alt="Smart Billing">
+
+                    <div class="card-title">
+                        Smart Billing
+                    </div>
+                </div>
+
+
+                <!-- FEATURE 3 -->
+
+                <div class="feature-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=700&q=85"
+                        alt="Payment Tracking">
+
+                    <div class="card-title">
+                        Payment Tracking
+                    </div>
+                </div>
+
+
+                <!-- FEATURE 4 -->
+
+                <div class="feature-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=85"
+                        alt="Revenue Insights">
+
+                    <div class="card-title">
+                        Revenue Insights
+                    </div>
+                </div>
+
+
+                <!-- FEATURE 5 -->
+
+                <div class="feature-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=700&q=85"
+                        alt="Business Automation">
+
+                    <div class="card-title">
+                        Business Automation
+                    </div>
+                </div>
+
+
+                <!-- DUPLICATE CARDS FOR CONTINUOUS SCROLLING -->
+
+                <div class="feature-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=700&q=85"
+                        alt="Subscription Management">
+
+                    <div class="card-title">
+                        Subscription Management
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=700&q=85"
+                        alt="Smart Billing">
+
+                    <div class="card-title">
+                        Smart Billing
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=700&q=85"
+                        alt="Payment Tracking">
+
+                    <div class="card-title">
+                        Payment Tracking
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=85"
+                        alt="Revenue Insights">
+
+                    <div class="card-title">
+                        Revenue Insights
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=700&q=85"
+                        alt="Business Automation">
+
+                    <div class="card-title">
+                        Business Automation
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT BRIGHTLOOP -->
+
+    <section class="about" id="about">
+
+        <div class="about-text">
+
+            <h2>
+                One Platform.
+                <span>Endless Possibilities.</span>
+            </h2>
+
+            <p>
+                Brightloop is designed to simplify the way
+                subscription-based businesses operate.
+
+                From managing customers and plans to generating
+                invoices, tracking payments and monitoring
+                revenue, everything comes together in one
+                organised platform.
+            </p>
+
+            <br>
+
+            <button class="primary-btn"
+                onclick="openModal('register')">
+                Join Brightloop
+            </button>
+
+        </div>
+
+
+        <img
+            class="about-image"
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=85"
+            alt="Team collaborating">
+
+    </section>
+
+
+    <!-- GET STARTED SECTION -->
+
+    <section class="get-started">
+
+        <h2>Your Business Deserves a Better Loop.</h2>
+
+        <p>
+            Start managing your subscriptions with Brightloop.
+        </p>
+
+        <button class="primary-btn"
+            onclick="openModal('register')">
+
+            Get Started as a Customer
+
+        </button>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2 class="logo">BRIGHTLOOP</h2>
+
+        <p>
+            Simplifying subscriptions. Empowering businesses.
+        </p>
+
+        <p>
+            © 2026 Brightloop. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- LOGIN / REGISTER ROLE POPUP -->
+
+    <div class="modal" id="roleModal">
+
+        <div class="modal-content">
+
+            <button class="close-btn" onclick="closeModal()">
+                &times;
+            </button>
+
+            <h2 id="modalTitle">
+                Welcome to Brightloop
+            </h2>
+
+            <p>
+                Choose how you want to continue.
+            </p>
+
+
+            <!-- ADMIN -->
+
+            <div class="role-option"
+                onclick="selectRole('Admin')">
+
+                <h3>Administrator</h3>
+
+                <p>
+                    Manage the entire platform.
+                </p>
+
+            </div>
+
+
+            <!-- EMPLOYEE -->
+
+            <div class="role-option"
+                onclick="selectRole('Employee')">
+
+                <h3>Employee / Staff</h3>
+
+                <p>
+                    Access daily business operations.
+                </p>
+
+            </div>
+
+
+            <!-- CUSTOMER -->
+
+            <div class="role-option"
+                onclick="selectRole('Customer')">
+
+                <h3>Customer</h3>
+
+                <p>
+                    Manage your subscriptions and invoices.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT FILE -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
