@@ -1,0 +1,417 @@
+
+/* ==============================
+   BRIGHTLOOP - CUSTOMER MANAGEMENT
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #101010;
+    --surface: #191919;
+    --surface-light: #222222;
+    --border: #303030;
+    --text: #ffffff;
+    --muted: #a5a5a5;
+    --primary: #e50914;
+    --primary-hover: #c9000b;
+    --success: #22c55e;
+    --danger: #ef4444;
+    --radius: 12px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+}
+
+/* ==============================
+   SIDEBAR
+================================ */
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background: #080808;
+    border-right: 1px solid var(--border);
+    padding: 30px 18px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar h2 {
+    color: var(--primary);
+    font-size: 23px;
+    letter-spacing: 2px;
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav li {
+    margin-bottom: 10px;
+}
+
+.sidebar nav a {
+    display: block;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 13px 16px;
+    border-radius: 8px;
+    transition: 0.25s ease;
+    font-size: 15px;
+}
+
+.sidebar nav a:hover {
+    background: var(--surface-light);
+    color: white;
+}
+
+.sidebar nav a[href="customers.html"] {
+    background: var(--primary);
+    color: white;
+}
+
+/* ==============================
+   MAIN CONTENT
+================================ */
+
+.customers-page {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 38px 45px;
+    max-width: 1600px;
+}
+
+/* ==============================
+   PAGE HEADER
+================================ */
+
+.page-header {
+    margin-bottom: 35px;
+}
+
+.page-header h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ==============================
+   COMMON SECTION STYLING
+================================ */
+
+.search-section,
+.customer-list,
+.add-customer,
+.edit-customer,
+.customer-details {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.search-section h2,
+.customer-list h2,
+.add-customer h2,
+.edit-customer h2,
+.customer-details h2 {
+    font-size: 19px;
+    margin-bottom: 22px;
+}
+
+/* ==============================
+   SEARCH SECTION
+================================ */
+
+.search-section form {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.search-section input,
+.search-section select {
+    flex: 1;
+    min-width: 180px;
+}
+
+/* ==============================
+   INPUTS AND SELECTS
+================================ */
+
+input,
+select {
+    background: #111111;
+    color: var(--text);
+    border: 1px solid #3a3a3a;
+    border-radius: 7px;
+    padding: 12px 14px;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    transition: border 0.2s ease;
+}
+
+input::placeholder {
+    color: #777777;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary);
+}
+
+select {
+    cursor: pointer;
+}
+
+select option {
+    background: #191919;
+    color: white;
+}
+
+/* ==============================
+   BUTTONS
+================================ */
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+button:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ==============================
+   CUSTOMER TABLE
+================================ */
+
+.customer-list {
+    overflow: hidden;
+}
+
+.customer-list table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 750px;
+}
+
+.customer-list {
+    overflow-x: auto;
+}
+
+.customer-list th {
+    background: #252525;
+    color: #dddddd;
+    text-align: left;
+    padding: 15px 13px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.customer-list td {
+    padding: 16px 13px;
+    border-bottom: 1px solid var(--border);
+    color: #cccccc;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.customer-list tbody tr {
+    transition: background 0.2s ease;
+}
+
+.customer-list tbody tr:hover {
+    background: #252525;
+}
+
+.customer-list tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.customer-list td button {
+    padding: 8px 15px;
+    font-size: 12px;
+}
+
+/* ==============================
+   ADD AND EDIT FORMS
+================================ */
+
+.add-customer form,
+.edit-customer form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 20px;
+    align-items: center;
+}
+
+.add-customer label,
+.edit-customer label {
+    color: #cccccc;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.add-customer button,
+.edit-customer button {
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin-top: 12px;
+    min-width: 150px;
+}
+
+/* ==============================
+   CUSTOMER DETAILS
+================================ */
+
+.details-card {
+    background: #202020;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+    border-radius: 9px;
+    padding: 23px;
+}
+
+.details-card h3 {
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+.details-card p {
+    color: #cccccc;
+    font-size: 14px;
+    margin-bottom: 14px;
+    line-height: 1.5;
+}
+
+.details-card p:last-child {
+    margin-bottom: 0;
+}
+
+.details-card strong {
+    color: white;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 1100px) {
+    .customers-page {
+        padding: 30px 25px;
+    }
+
+    .search-section form {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        display: block;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+        padding: 18px;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 18px;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        justify-content: center;
+    }
+
+    .sidebar nav li {
+        margin: 0;
+    }
+
+    .sidebar nav a {
+        padding: 9px 11px;
+        font-size: 13px;
+    }
+
+    .customers-page {
+        width: 100%;
+        margin-left: 0;
+        padding: 25px 18px;
+    }
+
+    .page-header h1 {
+        font-size: 25px;
+    }
+
+    .add-customer form,
+    .edit-customer form {
+        grid-template-columns: 1fr;
+    }
+
+    .add-customer button,
+    .edit-customer button {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-section,
+    .customer-list,
+    .add-customer,
+    .edit-customer,
+    .customer-details {
+        padding: 17px;
+    }
+
+    .page-header h1 {
+        font-size: 22px;
+    }
+
+    .details-card {
+        padding: 17px;
+    }
+}
