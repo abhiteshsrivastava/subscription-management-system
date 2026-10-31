@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrightLoop | Subscriptions</title>
+    <link rel="stylesheet" href="css/subscriptions.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>BRIGHTLOOP</h1>
+        <p>Subscription Management System</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="subscriptions.html">Subscriptions</a></li>
+            <li><a href="customers.html">Customers</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#">Payments</a></li>
+            <li><a href="#">Invoices</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <h2>Subscription Management</h2>
+        <p>Create quotations and manage customer subscriptions.</p>
+
+        <!-- Quotation Form -->
+
+        <section>
+            <h3>Create New Quotation</h3>
+
+            <form action="invoices.html" method="get">
+
+                <label for="quotation">Quotation ID:</label>
+                <input type="text" id="quotation" name="quotation"
+                       placeholder="Enter quotation ID">
+
+                <br><br>
+
+                <label for="customer">Select Customer:</label>
+                <select id="customer" name="customer" required>
+                    <option value="">Choose Customer</option>
+                    <option value="rahul">Rahul Sharma</option>
+                    <option value="priya">Priya Singh</option>
+                    <option value="aman">Aman Verma</option>
+                </select>
+
+                <br><br>
+
+                <label for="plan">Select Subscription Plan:</label>
+                <select id="plan" name="plan" required>
+                    <option value="">Choose Plan</option>
+                    <option value="basic">Basic</option>
+                    <option value="premium">Premium</option>
+                    <option value="enterprise">Enterprise</option>
+                </select>
+
+                <br><br>
+
+                <label for="start-date">Start Date:</label>
+                <input type="date" id="start-date" name="start_date" required>
+
+                <br><br>
+
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="date" id="expiry-date" name="expiry_date" required>
+
+                <br><br>
+
+                <h3>Product Details</h3>
+
+                <label for="product">Select Product:</label>
+                <select id="product" name="product" required>
+                    <option value="">Choose Product</option>
+                    <option value="software">Software License</option>
+                    <option value="cloud">Cloud Storage</option>
+                    <option value="support">Technical Support</option>
+                </select>
+
+                <br><br>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity"
+                       min="1" placeholder="Enter quantity" required>
+
+                <br><br>
+
+                <label for="price">Unit Price (₹):</label>
+                <input type="number" id="price" name="unit_price"
+                       min="0" placeholder="Enter unit price" required>
+
+                <br><br>
+
+                <label for="tax">Tax (%):</label>
+                <input type="number" id="tax" name="tax"
+                       min="0" placeholder="Enter tax percentage">
+
+                <br><br>
+
+                <label for="amount">Total Amount (₹):</label>
+                <input type="number" id="amount" name="amount"
+                       placeholder="Enter total amount">
+
+                <br><br>
+
+                <label for="status">Subscription Status:</label>
+                <select id="status" name="status" required>
+                    <option value="Draft">Draft</option>
+                    <option value="Quotation">Quotation</option>
+                    <option value="Confirmed">Confirmed</option>
+                    <option value="Active">Active</option>
+                    <option value="Closed">Closed</option>
+                </select>
+
+                <br><br>
+
+                <label for="notes">Additional Notes:</label>
+                <br>
+                <textarea id="notes" name="notes"
+                          placeholder="Enter additional details"></textarea>
+
+                <br><br>
+
+                <button type="submit">Create Quotation</button>
+
+            </form>
+        </section>
+
+        <hr>
+
+        <!-- Subscription Status Display -->
+
+        <section>
+            <h3>Subscription Status Overview</h3>
+
+            <table border="1" cellpadding="10">
+
+                <tr>
+                    <th>Customer</th>
+                    <th>Plan</th>
+                    <th>Start Date</th>
+                    <th>Expiry Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr>
+                    <td>Rahul Sharma</td>
+                    <td>Premium</td>
+                    <td>01-10-2026</td>
+                    <td>01-10-2027</td>
+                    <td>₹12,000</td>
+                    <td>Draft</td>
+                </tr>
+
+                <tr>
+                    <td>Priya Singh</td>
+                    <td>Basic</td>
+                    <td>15-09-2026</td>
+                    <td>15-10-2026</td>
+                    <td>₹2,000</td>
+                    <td>Quotation</td>
+                </tr>
+
+                <tr>
+                    <td>Aman Verma</td>
+                    <td>Enterprise</td>
+                    <td>01-10-2026</td>
+                    <td>01-10-2027</td>
+                    <td>₹25,000</td>
+                    <td>Confirmed</td>
+                </tr>
+
+                <tr>
+                    <td>Neha Gupta</td>
+                    <td>Premium</td>
+                    <td>01-08-2026</td>
+                    <td>01-08-2027</td>
+                    <td>₹15,000</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>Rohit Kumar</td>
+                    <td>Basic</td>
+                    <td>01-07-2025</td>
+                    <td>01-07-2026</td>
+                    <td>₹5,000</td>
+                    <td>Closed</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
