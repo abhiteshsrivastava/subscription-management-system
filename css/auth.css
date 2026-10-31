@@ -1,0 +1,298 @@
+
+/* =========================================
+   BRIGHTLOOP - AUTHENTICATION STYLES
+   ========================================= */
+
+/* 1. THEME VARIABLES */
+
+:root {
+    --bg: #101114;
+    --surface: #191b20;
+    --surface-hover: #22252c;
+    --text: #ffffff;
+    --muted: #a5a8b0;
+    --border: #34363d;
+    --input-bg: #121318;
+    --accent: #e32636;
+    --accent-hover: #c71929;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] {
+    --bg: #f4f5f8;
+    --surface: #ffffff;
+    --surface-hover: #f0f1f4;
+    --text: #191b22;
+    --muted: #707582;
+    --border: #dfe1e7;
+    --input-bg: #f8f9fb;
+    --accent: #d7192d;
+    --accent-hover: #b91426;
+    --shadow: rgba(0, 0, 0, 0.07);
+}
+
+/* 2. GENERAL RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* 3. HEADER */
+
+header {
+    text-align: center;
+    padding: 35px 20px 25px;
+}
+
+header h1 {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: var(--accent);
+}
+
+header p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+}
+
+/* 4. MAIN LAYOUT */
+
+main {
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 10px 20px 50px;
+}
+
+/* 5. FORM SECTIONS */
+
+section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px var(--shadow);
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+section h2 {
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+section > p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 23px;
+}
+
+/* 6. FORM ELEMENTS */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+label {
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+input:not([type="checkbox"]),
+select {
+    width: 100%;
+    height: 45px;
+    padding: 0 13px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--input-bg);
+    color: var(--text);
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input::placeholder {
+    color: var(--muted);
+    opacity: 0.8;
+}
+
+select {
+    cursor: pointer;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(227, 38, 54, 0.12);
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: #e05252;
+}
+
+/* 7. CHECKBOXES */
+
+form div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 10px 0;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+
+form div label {
+    margin: 0;
+    font-weight: 400;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* 8. BUTTONS */
+
+button {
+    min-height: 45px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 7px;
+    background: var(--accent);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* 9. LINKS */
+
+a {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+section form + p {
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+section form a {
+    align-self: flex-end;
+    margin: 3px 0 5px;
+}
+
+/* 10. ROLE SELECTION */
+
+#role-selection {
+    text-align: left;
+}
+
+#role-selection select {
+    margin-top: 2px;
+}
+
+/* 11. FOOTER */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* 12. RESPONSIVE DESIGN */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 25px 15px 20px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    main {
+        padding: 10px 14px 35px;
+    }
+
+    section {
+        padding: 22px 18px;
+        border-radius: 11px;
+    }
+
+    section h2 {
+        font-size: 20px;
+    }
+
+    input:not([type="checkbox"]),
+    select {
+        height: 44px;
+    }
+}
+
+@media (max-width: 360px) {
+
+    section {
+        padding: 18px 14px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+}
