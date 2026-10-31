@@ -1,0 +1,188 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Brightloop</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <h2> BRIGHTLOOP </h2>
+
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="#">Subscriptions</a></li>
+                <li><a href="#">Payments</a></li>
+                <li><a href="#">Invoices</a></li>
+                <li><a href="#">Customers</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+
+        <a href="auth.html">Logout</a>
+    </aside>
+
+
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Dashboard</h1>
+                <p>Welcome back! Here's your business overview.</p>
+            </div>
+
+            <div class="profile">
+                <span>Admin</span>
+            </div>
+        </header>
+
+
+        <!-- Revenue Summary -->
+        <section class="revenue-section">
+            <h2>Revenue Overview</h2>
+
+            <div class="summary-cards">
+                <article class="card">
+                    <h3>Total Revenue</h3>
+                    <p>₹2,45,000</p>
+                    <span>+12% this month</span>
+                </article>
+
+                <article class="card">
+                    <h3>Payments Received</h3>
+                    <p>₹1,85,000</p>
+                    <span>Last 30 days</span>
+                </article>
+
+                <article class="card">
+                    <h3>Active Subscriptions</h3>
+                    <p>248</p>
+                    <span>Currently running</span>
+                </article>
+
+                <article class="card">
+                    <h3>Overdue Invoices</h3>
+                    <p>12</p>
+                    <span>Requires attention</span>
+                </article>
+            </div>
+        </section>
+
+
+        <!-- Active Subscriptions -->
+        <section class="subscriptions-section">
+            <h2>Active Subscriptions</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Plan</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Next Billing</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Rahul Sharma</td>
+                        <td>Premium</td>
+                        <td>₹999</td>
+                        <td>Active</td>
+                        <td>05 Nov 2026</td>
+                    </tr>
+
+                    <tr>
+                        <td>Priya Verma</td>
+                        <td>Basic</td>
+                        <td>₹499</td>
+                        <td>Active</td>
+                        <td>08 Nov 2026</td>
+                    </tr>
+
+                    <tr>
+                        <td>Aarav Singh</td>
+                        <td>Enterprise</td>
+                        <td>₹2,499</td>
+                        <td>Active</td>
+                        <td>12 Nov 2026</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+        <!-- Upcoming Renewals -->
+        <section class="renewals-section">
+            <h2>Upcoming Renewals</h2>
+
+            <ul>
+                <li>Rahul Sharma - 05 November - ₹999</li>
+                <li>Priya Verma - 08 November - ₹499</li>
+                <li>Aarav Singh - 12 November - ₹2,499</li>
+            </ul>
+        </section>
+
+
+        <!-- Overdue Invoices -->
+        <section class="invoices-section">
+            <h2>Overdue Invoices</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Invoice ID</th>
+                        <th>Customer</th>
+                        <th>Amount</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>INV001</td>
+                        <td>Rohan Mehta</td>
+                        <td>₹1,500</td>
+                        <td>20 Oct 2026</td>
+                        <td>Overdue</td>
+                    </tr>
+
+                    <tr>
+                        <td>INV002</td>
+                        <td>Ananya Das</td>
+                        <td>₹999</td>
+                        <td>25 Oct 2026</td>
+                        <td>Overdue</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+        <!-- Operations Alerts -->
+        <section class="alerts-section">
+            <h2>Operations Alerts</h2>
+
+            <ul>
+                <li>12 invoices are pending payment.</li>
+                <li>5 subscriptions will expire this week.</li>
+                <li>3 payment transactions require verification.</li>
+                <li>2 customer accounts need attention.</li>
+            </ul>
+        </section>
+
+
+    </main>
+
+</body>
+</html>
+```
