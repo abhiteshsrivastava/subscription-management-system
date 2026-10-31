@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrightLoop | Customers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <h2>BRIGHTLOOP</h2>
+
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="#">Subscriptions</a></li>
+                <li><a href="#">Payments</a></li>
+                <li><a href="#">Invoices</a></li>
+                <li><a href="customers.html">Customers</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="customers-page">
+
+        <header class="page-header">
+            <h1>Customer Management</h1>
+            <p>Manage and monitor all your customers in one place.</p>
+        </header>
+
+
+        <!-- Search and Filter -->
+        <section class="search-section">
+
+            <h2>Search Customers</h2>
+
+            <form>
+                <input type="text" placeholder="Search by name or email">
+
+                <select>
+                    <option value="">All Customers</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+
+                <button type="submit">Search</button>
+            </form>
+
+        </section>
+
+
+        <!-- Customer List -->
+        <section class="customer-list">
+
+            <h2>Customer List</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Customer ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Subscription</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>CUST001</td>
+                        <td>Rahul Sharma</td>
+                        <td>rahul@gmail.com</td>
+                        <td>9876543210</td>
+                        <td>Premium</td>
+                        <td>Active</td>
+                        <td><button type="button">View</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>CUST002</td>
+                        <td>Priya Verma</td>
+                        <td>priya@gmail.com</td>
+                        <td>9876543211</td>
+                        <td>Basic</td>
+                        <td>Active</td>
+                        <td><button type="button">View</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>CUST003</td>
+                        <td>Aman Gupta</td>
+                        <td>aman@gmail.com</td>
+                        <td>9876543212</td>
+                        <td>Enterprise</td>
+                        <td>Inactive</td>
+                        <td><button type="button">View</button></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- Add Customer Form -->
+        <section class="add-customer">
+
+            <h2>Add New Customer</h2>
+
+            <form>
+
+                <label for="customer-name">Full Name</label>
+                <input type="text" id="customer-name"
+                       placeholder="Enter customer name" required>
+
+                <label for="customer-email">Email Address</label>
+                <input type="email" id="customer-email"
+                       placeholder="Enter email" required>
+
+                <label for="customer-phone">Phone Number</label>
+                <input type="tel" id="customer-phone"
+                       placeholder="Enter phone number">
+
+                <label for="customer-plan">Subscription Plan</label>
+                <select id="customer-plan">
+                    <option value="">Select Plan</option>
+                    <option value="basic">Basic</option>
+                    <option value="premium">Premium</option>
+                    <option value="enterprise">Enterprise</option>
+                </select>
+
+                <label for="customer-status">Status</label>
+                <select id="customer-status">
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+
+                <button type="submit">Add Customer</button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Edit Customer Form -->
+        <section class="edit-customer">
+
+            <h2>Edit Customer Details</h2>
+
+            <form>
+
+                <label for="edit-id">Customer ID</label>
+                <input type="text" id="edit-id"
+                       placeholder="Enter customer ID">
+
+                <label for="edit-name">Full Name</label>
+                <input type="text" id="edit-name"
+                       placeholder="Update customer name">
+
+                <label for="edit-email">Email</label>
+                <input type="email" id="edit-email"
+                       placeholder="Update email">
+
+                <label for="edit-phone">Phone Number</label>
+                <input type="tel" id="edit-phone"
+                       placeholder="Update phone number">
+
+                <label for="edit-plan">Subscription Plan</label>
+                <select id="edit-plan">
+                    <option value="basic">Basic</option>
+                    <option value="premium">Premium</option>
+                    <option value="enterprise">Enterprise</option>
+                </select>
+
+                <button type="submit">Save Changes</button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Customer Details -->
+        <section class="customer-details">
+
+            <h2>Customer Details</h2>
+
+            <div class="details-card">
+
+                <h3>Rahul Sharma</h3>
+
+                <p><strong>Customer ID:</strong> CUST001</p>
+                <p><strong>Email:</strong> rahul@gmail.com</p>
+                <p><strong>Phone:</strong> 9876543210</p>
+                <p><strong>Subscription:</strong> Premium</p>
+                <p><strong>Account Status:</strong> Active</p>
+                <p><strong>Registration Date:</strong> 15 September 2026</p>
+                <p><strong>Total Payments:</strong> ₹4,999</p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</body>
+</html>
