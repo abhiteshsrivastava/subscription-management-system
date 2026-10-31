@@ -1,1 +1,739 @@
 
+/* =====================================
+   1. GENERAL SETTINGS
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #080808;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+
+/* =====================================
+   2. NAVIGATION BAR
+===================================== */
+
+nav {
+    width: 100%;
+    padding: 22px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.95),
+        transparent
+    );
+}
+
+.logo {
+    color: #e50914;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e50914;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-buttons button {
+    padding: 11px 21px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.login-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid #ffffff;
+}
+
+.login-btn:hover {
+    background: white;
+    color: black;
+}
+
+.register-btn {
+    background: #e50914;
+    color: white;
+}
+
+.register-btn:hover {
+    background: #b20710;
+    transform: scale(1.05);
+}
+
+
+/* =====================================
+   3. HERO SECTION
+===================================== */
+
+.hero {
+    width: 100%;
+    height: 90vh;
+    min-height: 550px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* DARK IMAGE OVERLAY */
+
+.slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.75) 40%,
+        rgba(0, 0, 0, 0.15) 100%
+    );
+}
+
+
+/* BOTTOM FADE */
+
+.slide::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 200px;
+
+    background: linear-gradient(
+        transparent,
+        #080808
+    );
+}
+
+
+/* HERO TEXT */
+
+.slide-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 720px;
+    padding: 0 8%;
+    margin-top: 70px;
+}
+
+.tagline {
+    color: #e50914;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.slide-content h1 {
+    font-size: clamp(38px, 5vw, 68px);
+    line-height: 1.1;
+    font-weight: bold;
+    margin-bottom: 22px;
+}
+
+.slide-content p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #dddddd;
+    max-width: 580px;
+    margin-bottom: 30px;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 14px 25px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.primary-btn {
+    background-color: #e50914;
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #b20710;
+    transform: scale(1.05);
+}
+
+.secondary-btn {
+    background-color: rgba(100, 100, 100, 0.75);
+    color: white;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(150, 150, 150, 0.85);
+}
+
+
+/* SLIDER INDICATORS */
+
+.slider-dots {
+    position: absolute;
+    bottom: 90px;
+    right: 7%;
+
+    z-index: 5;
+
+    display: flex;
+    gap: 9px;
+}
+
+.dot {
+    width: 30px;
+    height: 4px;
+    background-color: #777777;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dot.active {
+    background-color: #e50914;
+}
+
+
+/* =====================================
+   4. EXPLORE FEATURES SECTION
+===================================== */
+
+.section {
+    padding: 45px 6%;
+}
+
+.section h2 {
+    font-size: 29px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.section h2 span {
+    color: #e50914;
+}
+
+
+/* AUTOMATIC HORIZONTAL SCROLL */
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+
+    animation: scroll 35s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* FEATURE CARDS */
+
+.feature-card {
+    width: 300px;
+    height: 190px;
+
+    flex-shrink: 0;
+
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 7px;
+    cursor: pointer;
+
+    transition: transform 0.35s ease;
+}
+
+.feature-card:hover {
+    transform: scale(1.08);
+    z-index: 2;
+}
+
+.feature-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.feature-card:hover img {
+    transform: scale(1.12);
+}
+
+
+/* CARD IMAGE GRADIENT */
+
+.feature-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        transparent 25%,
+        rgba(0, 0, 0, 0.9)
+    );
+}
+
+
+/* CARD TITLE */
+
+.card-title {
+    position: absolute;
+    bottom: 18px;
+    left: 16px;
+
+    z-index: 2;
+
+    font-size: 19px;
+    font-weight: bold;
+    color: white;
+}
+
+
+/* =====================================
+   5. ABOUT SECTION
+===================================== */
+
+.about {
+    padding: 90px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 50px;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text h2 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.about-text h2 span {
+    color: #e50914;
+}
+
+.about-text p {
+    font-size: 17px;
+    line-height: 1.9;
+    color: #bbbbbb;
+}
+
+.about-image {
+    width: 42%;
+    max-width: 550px;
+
+    border-radius: 10px;
+
+    object-fit: cover;
+
+    box-shadow: 0 10px 40px rgba(229, 9, 20, 0.15);
+
+    transition: transform 0.4s ease;
+}
+
+.about-image:hover {
+    transform: scale(1.03);
+}
+
+
+/* =====================================
+   6. GET STARTED SECTION
+===================================== */
+
+.get-started {
+    padding: 85px 20px;
+    text-align: center;
+
+    background: linear-gradient(
+        120deg,
+        #260408,
+        #111111,
+        #260408
+    );
+}
+
+.get-started h2 {
+    font-size: 38px;
+    margin-bottom: 18px;
+}
+
+.get-started p {
+    color: #cccccc;
+    font-size: 17px;
+    margin-bottom: 28px;
+}
+
+
+/* =====================================
+   7. FOOTER
+===================================== */
+
+footer {
+    padding: 40px 6%;
+    text-align: center;
+
+    color: #888888;
+
+    border-top: 1px solid #292929;
+}
+
+footer .logo {
+    margin-bottom: 15px;
+}
+
+footer p {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+
+/* =====================================
+   8. ROLE SELECTION POPUP
+===================================== */
+
+.modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 100;
+
+    background: rgba(0, 0, 0, 0.88);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px;
+}
+
+.modal-content {
+    background-color: #181818;
+
+    width: 100%;
+    max-width: 430px;
+
+    padding: 35px;
+
+    border-radius: 10px;
+    border: 1px solid #333333;
+
+    position: relative;
+
+    text-align: center;
+}
+
+.modal-content h2 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.modal-content > p {
+    color: #aaaaaa;
+    margin-bottom: 25px;
+}
+
+
+/* CLOSE BUTTON */
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+
+    background: transparent;
+    color: white;
+
+    font-size: 27px;
+    padding: 5px;
+}
+
+.close-btn:hover {
+    color: #e50914;
+}
+
+
+/* ROLE OPTIONS */
+
+.role-option {
+    background-color: #292929;
+
+    padding: 18px;
+    margin: 13px 0;
+
+    border-radius: 6px;
+
+    text-align: left;
+
+    border: 1px solid transparent;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.role-option:hover {
+    background-color: #35191b;
+    border-color: #e50914;
+    transform: translateX(5px);
+}
+
+.role-option h3 {
+    font-size: 17px;
+    margin-bottom: 7px;
+}
+
+.role-option p {
+    font-size: 13px;
+    color: #aaaaaa;
+}
+
+
+/* =====================================
+   9. RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 750px) {
+
+    /* NAVBAR */
+
+    nav {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 18px 5%;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .nav-buttons button {
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        height: 78vh;
+        min-height: 520px;
+    }
+
+    .slide-content {
+        padding: 0 6%;
+    }
+
+    .slide-content h1 {
+        font-size: 39px;
+    }
+
+    .slide-content p {
+        font-size: 15px;
+    }
+
+    .slider-dots {
+        bottom: 55px;
+        right: 6%;
+    }
+
+
+    /* FEATURES */
+
+    .section {
+        padding: 35px 5%;
+    }
+
+    .section h2 {
+        font-size: 24px;
+    }
+
+    .feature-card {
+        width: 240px;
+        height: 155px;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+
+    /* ABOUT */
+
+    .about {
+        padding: 60px 6%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-text h2 {
+        font-size: 32px;
+    }
+
+    .about-image {
+        width: 100%;
+    }
+
+
+    /* GET STARTED */
+
+    .get-started h2 {
+        font-size: 29px;
+    }
+
+}
+
+
+/* SMALL MOBILE SCREENS */
+
+@media (max-width: 420px) {
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .slide-content h1 {
+        font-size: 33px;
+    }
+
+    .slide-content p {
+        font-size: 14px;
+    }
+
+    .hero-buttons button {
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+
+    .modal-content {
+        padding: 28px 20px;
+    }
+
+}
+
